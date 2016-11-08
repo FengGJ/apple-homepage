@@ -1,0 +1,737 @@
+.top_ad{
+  position: absolute;
+  z-index: 9999;
+  background: #444;
+  line-height: 1;
+  width: 100%;
+  right: 0;
+  height: 40px;
+  z-index: 9999;
+}
+.top_ad .adv-wrapper-text{
+  color: #a8a8aa;
+  font-size: 12px;
+  font-family: "HanHei SC", PingHei, "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: block;
+  line-height: 40px;
+  overflow: hidden;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  text-align: right;
+  max-width: 976px;
+  margin: 0 auto;
+}
+.nav *{
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.nav{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  display: block;
+  margin: 0;
+  width: 100%;
+  min-width: 1024px;
+  height: 48px;
+  max-height: 44px;
+  background: #333;
+  background: rgba(0,0,0,0.8);
+  font-size: 18px;
+  -webkit-user-select: none;
+}
+
+.nav .content{
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 0 22px;
+  position: relative;
+  z-index: 2;
+}
+.nav li a{
+  font-size: 16px;
+  line-height: 2.75;
+  font-weight: 400;
+  letter-spacing: normal;
+  opacity: 1;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 0 10px;
+  height: 44px;
+  background: no-repeat;
+  text-decoration: none;
+
+}
+.nav .apple a{
+  background-repeat: no-repeat;
+  background-size: 20px 44px;
+  background-image: url("../images/image_large.svg");
+  background-position: center center;
+  width: 20px;
+}
+.nav .mac a{
+  background-repeat: no-repeat;
+  background-size: 31px 44px;
+  background-image: url("../images/mac.svg");
+  background-position: center center;
+  background-origin: content-box;
+  background-size: cover;
+  width: 1.9375em;
+  max-width: 52.7px;
+}
+.nav .ipad a {
+  background-repeat: no-repeat;
+  background-size: 30px 44px;
+  background-image: url("../images/ipad.svg");
+  background-position: center center;
+  background-origin: content-box;
+  background-size: cover;
+  width: 1.875em;
+  max-width: 51px;
+}
+.nav .iphone a {
+  background-repeat: no-repeat;
+  background-size: 48px 44px;
+  background-image: url("../images/iphone.svg");
+  background-position: center center;
+  background-origin: content-box;
+  background-size: cover;
+  width: 3em;
+  max-width: 81.6px;
+}
+.nav .watch a {
+  background-repeat: no-repeat;
+  background-size: 44px 44px;
+  background-image: url("../images/watch.svg");
+  background-position: center center;
+  background-origin: content-box;
+  background-size: cover;
+  width: 2.75em;
+  max-width: 74.8px;
+}
+.nav .music a {
+  background-repeat: no-repeat;
+  background-size: 40px 44px;
+  background-image: url("../images/music.svg");
+  background-position: center center;
+  background-origin: content-box;
+  background-size: cover;
+  width: 2.5em;
+  max-width: 68px;
+}
+.nav .support a {
+  background-repeat: no-repeat;
+  background-size: 57px 44px;
+  background-image: url("../images/support.svg");
+  background-position: center center;
+  background-origin: content-box;
+  background-size: cover;
+  width: 3.5625em;
+  max-width: 96.9px;
+}
+.nav .search a {
+  background-repeat: no-repeat;
+  background-size: 20px 44px;
+  background-image: url("../images/search.svg");
+  background-position: center center;
+  width: 20px;
+}
+.nav .bag a {
+  background-repeat: no-repeat;
+  background-size: 18px 44px;
+  background-image: url("../images/bag.svg");
+  background-position: center center;
+  width: 18px;
+}
+.nav .header{
+  display: none;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  overflow: hidden;
+}
+.nav .lists {
+  width: auto;
+  cursor: default;
+  margin: 0 -10px;
+  height: 44px;
+  text-align: justify;
+  -ms-text-justify: distribute-all-lines;
+  text-justify: distribute-all-lines;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.nav .lists:after{
+  content: '';
+  width: 100%;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+}
+
+.nav .item{
+  display: inline-block;
+  position: relative;
+  height: 44px;
+  z-index: 1;
+  vertical-align: top;
+}
+.nav .header .menu {
+  left: 0;
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: 48px;
+  border-bottom: none;
+}
+.nav .header .apple{
+  position: absolute;
+  width: 48px;
+  top: 0;
+  left: 50%;
+  margin-left: -24px;
+  text-align: center;
+  z-index: 1;
+}
+.nav .header .bag{
+  z-index: 2;
+}
+.nav .item a:hover{
+  opacity: .65;
+}
+.nav .menu>div{
+  display: block;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),-webkit-transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),-webkit-transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99),-webkit-transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  -webkit-tap-highlight-color: transparent;
+}
+.nav .menu div>span{
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.nav .menu div>.top {
+   -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+   transition: -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+   transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+   transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99), -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+   -webkit-transform: rotate(0);
+  -ms-transform: rotate(0);
+   transform: rotate(0);
+  z-index: 4;
+}
+.nav .menu div>span>span{
+  display: block;
+  width: 17px;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  left: 16px;
+  z-index: 1;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+.nav .menu div>.top>span {
+  top: 23px;
+  -webkit-transition: -webkit-transform 0.2s 0.2s;
+  transition: -webkit-transform 0.2s 0.2s;
+  transition: transform 0.2s 0.2s;
+  transition: transform 0.2s 0.2s, -webkit-transform 0.2s 0.2s;
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+}
+.nav .menu div>.bottom {
+  -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition: -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99), -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  -webkit-transform: rotate(0);
+  -ms-transform: rotate(0);
+  transform: rotate(0);
+}
+.nav .menu div>.bottom>span {
+  bottom: 23px;
+  -webkit-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  transform: translateY(3px);
+}
+@media screen and (max-width:1044px){
+  .nav{
+    min-width: 320px;
+  }
+}
+@media screen and (max-width:767px){
+  .nav{
+    max-height: none;
+  }
+  .nav.active{
+    height:100%;
+    background: #000;
+  }
+  .nav .lists{
+    display: none;
+  }
+  .nav.active .lists{
+    display: block;
+  }
+  .nav .lists:before,.nav .lists:after{
+    content: "";
+    display: block;
+  }
+  .nav .lists:after{
+    clear: both;
+  }
+  .nav.active .lists>.apple,.nav.active .lists>.bag{
+    display: none;
+  }
+  .nav .lists{
+    position:absolute;
+    top:48px;
+    padding:0 48px;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:0;
+    box-sizing: border-box;
+    height: auto;
+    z-index: 999;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transition: visibility 0s linear 1s;
+    transition: visibility 0s linear 1s;
+
+  }
+  .nav .lists li{
+    width: 100%;
+    height: 47px;
+    border-bottom: 1px solid #333;
+    pointer-events: none;
+  }
+  .nav .apple a{
+    background-size: 21px 48px;
+  }
+  .nav .bag{
+    right: 0;
+    position: absolute;
+    top: 0;
+    width: auto;
+    z-index: 1;
+  }
+  .nav .bag a{
+    background-size: 19px 48px;
+  }
+  .nav .meun:hover{
+     -webkit-transform: translateX(200%);
+    -ms-transform: translateX(200%);
+     transform: translateX(200%);
+     -webkit-transition: -webkit-transform 0.55s 0.25s ease-out;
+     transition: -webkit-transform 0.55s 0.25s ease-out;
+     transition: transform 0.55s 0.25s ease-out;
+     transition: transform 0.55s 0.25s ease-out, -webkit-transform 0.55s 0.25s ease-out;
+  }
+  .nav .header {
+    display: block;
+  }
+  .nav .header .menu{
+    display: block;
+  }
+
+
+}
+
+/*********************产品*************************/
+.main {
+  border-bottom: 2px solid #fff
+}
+.main .row>div{
+  list-style-type: none;
+  box-sizing: border-box;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+.main .row>div>a{
+  display: block;
+  background-position: center center;
+  height:200px
+}
+.main .row>div:nth-child(1) a{
+  background-image:url("../images/nike_watch_large.jpg");
+  background-size: 360px 200px;
+  background-repeat: no-repeat;
+}
+.main .row>div:nth-child(2) a{
+  background-image:url("../images/airpods_large.jpg");
+  background-size: 360px 200px;
+  background-repeat: no-repeat;
+}
+.main .row>div:nth-child(3) a{
+  background-image:url("../images/iphone_upgrade_large.jpg");
+  background-size: 360px 200px;
+  background-repeat: no-repeat;
+}
+.main .row>div:nth-child(4) a{
+  background-image:url("../images/accessibility_large.jpg");
+  background-size: 360px 200px;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width:1068px){
+  .main .row>div:nth-child(1) a{
+    background-image:url("../images/nike_watch_medium.jpg");
+    background-size: 640px 200px;
+  }
+  .main .row>div:nth-child(2) a{
+    background-image:url("../images/airpods_medium.jpg");
+    background-size: 640px 200px;
+  }
+  .main .row>div:nth-child(3) a{
+    background-image:url("../images/iphone_upgrade_medium.jpg");
+    background-size: 640px 200px;
+  }
+  .main .row>div:nth-child(4) a{
+    background-image:url("../images/accessibility_medium.jpg");
+    background-size: 640px 200px;
+  }
+  .main .row>div>a {
+    display: block;
+    background-position: center center;
+  }
+}
+
+@media screen and (max-width:735px){
+  .main .row>div:nth-child(1) a{
+    background-image:url("../images/nike_watch_small.jpg");
+    background-size: 736px 200px;
+  }
+  .main .row>div:nth-child(2) a{
+    background-image:url("../images/airpods_small.jpg");
+    background-size: 736px 200px;
+  }
+  .main .row>div:nth-child(3) a{
+    background-image:url("../images/iphone_upgrade_small.jpg");
+    background-size: 736px 200px;
+  }
+  .main .row>div:nth-child(4) a{
+    background-image:url("../images/accessibility_small.jpg");
+    background-size: 736px 200px;
+  }
+  .main .row>div>a {
+    display: block;
+    background-position: center center;
+  }
+}
+
+/**************banner****************/
+.banner{
+  width:100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  max-height: 100%;
+  min-height: 540px;
+}
+.banner .content{
+  height:100%
+}
+.banner .images li{
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  position: absolute;
+}
+.banner .images li a{
+  display: block;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  color: #333;
+}
+.banner figure{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 110%;
+}
+.banner .images li:nth-child(1) figure {
+
+  width: auto;
+  height: auto;
+  top: 30%;
+  bottom: -10%;
+  left: 0;
+  right: 0;
+  background-size: auto 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-image:url("../images/macbookpro_large.jpg")
+}
+.banner .images li:nth-child(1) a{
+  background-color: #fff;
+
+}
+.banner .images li:nth-child(2) figure {
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-image:url("../images/iphone_large.jpg");
+  background-color: #000000;
+
+}
+.banner .images li:nth-child(3) figure {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  background-position: 50% 38%;
+  background-image:url("../images/event_large.jpg")
+}
+.banner .dot_nav{
+  position: absolute;
+  z-index: 1000;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  line-height: 1;
+}
+.banner .dot_nav ul {
+  display: inline-block;
+}
+.banner .dot_nav li {
+  list-style: none;
+  margin: 0 5px;
+  width: 50px;
+  height: 22px;
+  float: left;
+  position: relative;
+}
+.banner .dot_nav li>div{
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  outline: none;
+  position: absolute;
+  padding: 10px 0;
+  opacity: 1;
+}
+.banner .dot_nav li>div>p{
+  position: relative;
+  z-index: 1;
+  height: 2px;
+  width: 100%;
+  background-color: rgba(128,128,128,0.2);
+}
+.banner .dot_nav .active>div>p {
+  background: gray;
+}
+.banner .arrow{
+  width:100%;
+  position: absolute;
+}
+.banner .arrow ul{
+
+
+}
+.banner .arrow li{
+  cursor: pointer;
+  width: 20%;
+  height: 540px;
+  position: absolute;
+  z-index: 99;
+}
+.banner .arrow button{
+  width: 64px;
+  height: 64px;
+  z-index: 1000;
+  border-radius: 32px;
+  background-color: rgba(180,180,180,0.25);
+  color: #848484;
+  font-size: 40px;
+  line-height: 60px;
+  opacity: 0;
+  position: absolute;
+  display: block;
+  text-align: center;
+  border:0;
+}
+action
+.banner .arrow .pre{
+  left:0;
+}
+.banner .arrow .pre button{
+  left: 18px;
+  top: 50%;
+}
+.banner .arrow .next{
+  right:0;
+}
+
+.banner .arrow .next button{
+  right: 18px;
+  top: 50%;
+}
+
+.banner .arrow li:hover button{
+  opacity: .6;
+}
+.banner .arrow  li button:hover{
+  opacity: .8;
+}
+/*友情链接*/
+.footer{
+  width:100%;
+  font-size: 12px;
+  font-family: "PingFang SC","STHeitiSC-Light","Helvetica Neue","Helvetica","Arial","sans-serif";
+  background-color: #f2f2f2;
+}
+.footer a{
+  color:#666;
+}
+
+.footer dt{
+  color:#333;
+  font-weight:600;
+  line-height: 1.66667;
+}
+.footer .content{
+  margin: 0 auto;
+  padding: 0 22px;
+  max-width: 980px;
+}
+.footer .directory{
+  letter-spacing:normal;
+  padding-top: 20px;
+}
+.footer dl{
+  float:left;
+  width:20%;
+  line-height: 1.66667;
+}
+.directory:before,.directory:after{
+  content:"";
+  display: block;
+}
+.directory:after{
+  clear: both;
+}
+.footer .dt_padding{
+  padding-top: 20px;
+}
+
+.footer .sosumi{
+  color:#999;
+  border-bottom: 1px solid #e3e3e3;
+  padding: 16px 0 11px;
+}
+.footer .sosumi li{
+  line-height: 1.33333;
+  padding-bottom: 5px;
+}
+.footer a:hover{
+  text-decoration:underline;
+  color: #333;
+}
+.footer dt i{
+  display: none;
+  float:right;
+}
+@media screen and (max-width:767px){
+  .footer dt i{
+    display: block;
+  }
+  .footer .content {
+    padding: 0 16px;
+  }
+  .footer dl{
+    width:100%;
+    line-height: 2.5;
+
+  }
+  .footer dt{
+    font-size: 14px;
+    line-height: 2.78571;
+    font-weight: 400;
+    letter-spacing: normal;
+    background: #f2f2f2;
+    cursor: pointer;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 2;
+    border-bottom: 1px solid #e3e3e3;
+  }
+  .footer dd>ul{
+    width:100%;
+    overflow: hidden;
+    display: none;
+    -webkit-transform: translateY(-100px);
+    -ms-transform: translateY(-100px);
+    transform: translateY(-100px);
+  }
+  .footer .active+dd>ul{
+    display: block;
+    z-index: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-transition: -webkit-transform 300ms ease;
+    transition: -webkit-transform 300ms ease;
+    transition: transform 300ms ease;
+    transition: transform 300ms ease, -webkit-transform 300ms ease
+  }
+  .footer dd a{
+    outline-offset: -6px;
+    padding: 0 14px;
+    display: block;
+  }
+  .footer .active+dd li:last-child {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e3e3e3;
+  }
+  .footer .active{
+    border-bottom:0;
+  }
+  .footer .active span{
+    font-weight: 600;
+    color: #333;
+  }
+  .footer .dt_padding {
+    padding-top:0;
+  }
+}
