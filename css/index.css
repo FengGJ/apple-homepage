@@ -31,7 +31,7 @@
   top: 0;
   right: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 100;
   display: block;
   margin: 0;
   width: 100%;
@@ -159,6 +159,8 @@
   overflow: hidden;
 }
 .nav .lists {
+  display:block;
+  position: relative;
   width: auto;
   cursor: default;
   margin: 0 -10px;
@@ -181,7 +183,6 @@
 
 .nav .item{
   display: inline-block;
-  position: relative;
   height: 44px;
   z-index: 1;
   vertical-align: top;
@@ -210,6 +211,9 @@
 .nav .item a:hover{
   opacity: .65;
 }
+.nav .menu:hover span{
+  opacity: .65;
+}
 .nav .menu>div{
   display: block;
   position: absolute;
@@ -218,11 +222,7 @@
   width: 48px;
   height: 48px;
   cursor: pointer;
-  -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),-webkit-transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),-webkit-transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99),-webkit-transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-  -webkit-tap-highlight-color: transparent;
+
 }
 .nav .menu div>span{
   position: absolute;
@@ -231,18 +231,10 @@
   left: 0;
   width: 48px;
   height: 48px;
-  -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
 }
 .nav .menu div>.top {
-   -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-   transition: -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-   transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-   transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99), -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-   -webkit-transform: rotate(0);
-  -ms-transform: rotate(0);
-   transform: rotate(0);
-  z-index: 4;
+
 }
 .nav .menu div>span>span{
   display: block;
@@ -252,29 +244,17 @@
   position: absolute;
   left: 16px;
   z-index: 1;
-  -webkit-transition: -webkit-transform 0.2s;
-  transition: -webkit-transform 0.2s;
-  transition: transform 0.2s;
-  transition: transform 0.2s, -webkit-transform 0.2s;
+
 }
 .nav .menu div>.top>span {
   top: 23px;
-  -webkit-transition: -webkit-transform 0.2s 0.2s;
-  transition: -webkit-transform 0.2s 0.2s;
-  transition: transform 0.2s 0.2s;
-  transition: transform 0.2s 0.2s, -webkit-transform 0.2s 0.2s;
+
   -webkit-transform: translateY(-3px);
   -ms-transform: translateY(-3px);
   transform: translateY(-3px);
 }
 .nav .menu div>.bottom {
-  -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-  transition: -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-  transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-  transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99), -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-  -webkit-transform: rotate(0);
-  -ms-transform: rotate(0);
-  transform: rotate(0);
+
 }
 .nav .menu div>.bottom>span {
   bottom: 23px;
@@ -288,31 +268,43 @@
   }
 }
 @media screen and (max-width:767px){
-  .nav{
-    max-height: none;
+  .nav .header{
+    background: #000;
   }
   .nav.active{
+    max-height: none;
     height:100%;
-    background: #000;
+    overflow: hidden;
+    background: transparent;
+
+  }
+  .nav .content{
+    padding:0;
+    height:100%;
   }
   .nav .lists{
     display: none;
+    background: #000;
   }
   .nav.active .lists{
-    display: block;
+    z-index: 9999;
+    height:100%;
   }
   .nav .lists:before,.nav .lists:after{
     content: "";
     display: block;
   }
   .nav .lists:after{
-    clear: both;
+    clear:both;
+    overflow:hidden;
+    height:0px;
+    *zoom:1;
   }
-  .nav.active .lists>.apple,.nav.active .lists>.bag{
+  .nav .lists>.apple,.nav .lists>.bag{
     display: none;
   }
   .nav .lists{
-    position:absolute;
+    position: relative;
     top:48px;
     padding:0 48px;
     bottom:0;
@@ -322,9 +314,7 @@
     box-sizing: border-box;
     height: auto;
     z-index: 999;
-    -webkit-overflow-scrolling: touch;
-    -webkit-transition: visibility 0s linear 1s;
-    transition: visibility 0s linear 1s;
+    display: none;
 
   }
   .nav .lists li{
@@ -346,15 +336,7 @@
   .nav .bag a{
     background-size: 19px 48px;
   }
-  .nav .meun:hover{
-     -webkit-transform: translateX(200%);
-    -ms-transform: translateX(200%);
-     transform: translateX(200%);
-     -webkit-transition: -webkit-transform 0.55s 0.25s ease-out;
-     transition: -webkit-transform 0.55s 0.25s ease-out;
-     transition: transform 0.55s 0.25s ease-out;
-     transition: transform 0.55s 0.25s ease-out, -webkit-transform 0.55s 0.25s ease-out;
-  }
+
   .nav .header {
     display: block;
   }
@@ -534,6 +516,7 @@
   height: 22px;
   float: left;
   position: relative;
+  padding: 10px 0;
 }
 .banner .dot_nav li>div{
   -webkit-box-sizing: content-box;
@@ -544,19 +527,18 @@
   width: 50px;
   height: 2px;
   outline: none;
-  position: absolute;
-  padding: 10px 0;
   opacity: 1;
-}
-.banner .dot_nav li>div>p{
-  position: relative;
-  z-index: 1;
-  height: 2px;
-  width: 100%;
   background-color: rgba(128,128,128,0.2);
 }
+.banner .dot_nav li>div>p{
+  z-index: 1;
+  height: 2px;
+  width:0;
+  background: red;
+}
 .banner .dot_nav .active>div>p {
-  background: gray;
+  width:100%;
+  background: red;
 }
 .banner .arrow{
   width:100%;
@@ -588,7 +570,6 @@
   text-align: center;
   border:0;
 }
-action
 .banner .arrow .pre{
   left:0;
 }
@@ -637,6 +618,7 @@ action
   padding-top: 20px;
 }
 .footer dl{
+  display: block;
   float:left;
   width:20%;
   line-height: 1.66667;
@@ -696,24 +678,18 @@ action
     z-index: 2;
     border-bottom: 1px solid #e3e3e3;
   }
+  .footer dd{
+    display: none;
+  }
   .footer dd>ul{
     width:100%;
     overflow: hidden;
     display: none;
-    -webkit-transform: translateY(-100px);
-    -ms-transform: translateY(-100px);
-    transform: translateY(-100px);
+
   }
   .footer .active+dd>ul{
     display: block;
     z-index: 1;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    -webkit-transition: -webkit-transform 300ms ease;
-    transition: -webkit-transform 300ms ease;
-    transition: transform 300ms ease;
-    transition: transform 300ms ease, -webkit-transform 300ms ease
   }
   .footer dd a{
     outline-offset: -6px;
