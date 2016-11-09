@@ -6,7 +6,7 @@ $(function(){
         $(document.body).toggleClass("html-body-overflow");
     })
     $(window).resize(function () {
-        width=$(window).width();
+        // width=$(window).width();
         if(width>767){
             $(".nav").removeClass("active");
             $(document.body).removeClass("html-body-overflow");
