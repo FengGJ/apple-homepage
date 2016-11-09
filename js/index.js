@@ -141,13 +141,18 @@ $(function() {
 
 // 底部
     $(".footer .directory dl>dt").click(function(){
-        $(this).toggleClass("active")
-        if($(this).attr("class")=="active"||$(this).attr("class")=="dt_padding active"){
-            $(this).next().slideDown(300);
+        if (width1 > 767) {
 
         }else{
-            $(this).next().slideUp(300);
+            $(this).toggleClass("active")
+            if($(this).attr("class")=="active"||$(this).attr("class")=="dt_padding active"){
+                $(this).next().slideDown(300);
+
+            }else{
+                $(this).next().slideUp(300);
+            }
         }
+
 
     })
 })
