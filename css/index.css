@@ -651,6 +651,65 @@
   display: none;
   float:right;
 }
+/*版本*/
+.footer .version {
+  color: #999;
+  padding: 20px 0 24px;
+}
+.footer .footer-shop{
+  margin-bottom: 6px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e3e3e3;
+}
+.footer .footer-shop a{
+  color: #0070c9;
+}
+.footer .footer-shop a:hover{
+  color: #333;
+}
+.footer .footer-locale{
+  float:right;
+}
+.footer .footer-locale a{
+   color: #666;
+}
+.footer .footer-locale span{
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-size: 16px 16px;
+  padding-right: 5px;
+  background:url("../images/16.png") no-repeat center;
+  float: left;
+}
+.footer .legal:before,.footer .legal:after{
+  content: '';
+  display: block;
+}
+.footer .legal:after{
+  clear: both;
+}
+.footer .legal>div{
+  float:left;
+  margin-right: 26px;
+}
+.footer .legal>div:nth-child(2)>a{
+  border-right: 1px solid #d6d6d6;
+  margin-right: 10px;
+  padding-right: 12px;
+  white-space: nowrap;
+}
+.footer .version>p{
+  margin-top: 5px;
+  /*margin-bottom: 20px;*/
+  color: #999;
+}
+.footer .version>p a{
+  color: #999;
+}
 @media screen and (max-width:767px){
   .footer dt i{
     display: block;
@@ -709,5 +768,21 @@
   }
   .footer .dt_padding {
     padding-top:0;
+  }
+
+  .footer .footer-locale{
+    float: none;
+    position: relative;
+    z-index: 1;
+  }
+  .footer .legal{
+    padding-top: 13px;
+
+  }
+  .footer .legal> div{
+  float: none;
+  }
+  .footer .footer-shop{
+    border:0;
   }
 }
