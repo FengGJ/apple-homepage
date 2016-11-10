@@ -1,7 +1,8 @@
 $(function() {
     // 导航
     var width = $(window).width();
-    console.log(width+"-1")
+    var width1=$(window).width();
+
     var height = $(window).height();
     $(window).resize(function () {
         height = $(window).height();
@@ -66,7 +67,7 @@ $(function() {
 
         } else if (type == "next") {
             num++;
-            currentTime = 0;
+
             if (num >= $(".banner .images li").length) {
                 num = 0;
                 // $(".banner .dot_nav li").removeClass("active");
@@ -77,6 +78,9 @@ $(function() {
                 $(".banner .images ul>li").eq(num).css({"z-index": 2});
                 $(".banner .images ul>li").eq(next).css({"z-index": 1});
                 flag = false;
+                if(w==0){
+                    currentTime=0;
+                }
             })
         }
         if(s){
@@ -93,20 +97,48 @@ $(function() {
     // 进度条
     var w = currentTime / 3000;
     function move1() {
+        currentTime += 50;
+        w = currentTime / 3000;
+        if(w>1){
+            w=1;
+        }
+        $(".banner .dot_nav li").eq(num).find("p").css("width", w * 100 + "%");
+        if(w==1){
+            w=0;
+        }
 
-            currentTime += 50;
-            if(w>1){
-                $(".banner .dot_nav li").eq(num).find("p").css("width", w * 100 + "%");
-                w=0;
-            }else if(w<=1){
-                w = currentTime / 3000;
 
-                $(".banner .dot_nav li").eq(num).find("p").css("width", w * 100 + "%");
-            }
+        /*  if(w>1){
+              console.log(w)
+              $(".banner .dot_nav li").eq(num).find("p").css("width", "100%");
+
+              w=0;
+              console.log(currentTime)
+
+          }else if(w<=1&&currentTime!=0){
+
+              w = currentTime / 3000;
+              $(".banner .dot_nav li").eq(num).find("p").css("width", w * 100 + "%");
+
+          }
+          if(w==0){
+              currentTime=0;
+
+          }*/
 
         }
     var td=setInterval(move1,50);
 
+    $(window).blur(function(){
+        clearInterval(t);
+        clearInterval(td);
+        return false;
+    });
+    $(window).focus(function () {
+        t = setInterval(move, 3000);
+        td=setInterval(move1,50);
+        return false;
+    })
 
     $(".banner .pre>button").click(function () {
         clearInterval(t)
