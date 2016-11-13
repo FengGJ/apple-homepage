@@ -6,7 +6,6 @@
   width: 100%;
   right: 0;
   height: 40px;
-  z-index: 9999;
 }
 .top_ad .adv-wrapper-text{
   color: #a8a8aa;
@@ -208,7 +207,7 @@
 .nav .header .bag{
   z-index: 2;
 }
-.nav .item a:hover{
+.nav .content .item:hover a{
   opacity: .65;
 }
 .nav .menu:hover span{
@@ -222,127 +221,147 @@
   width: 48px;
   height: 48px;
   cursor: pointer;
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99),-webkit-transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+.nav.active .menu>div{
+   transform: rotate(90deg);
+}
+
+.nav .menu span{
+transition: transform 0.25s 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99), -webkit-transform 0.25s 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+
+.nav.active .menu .bottom{
+transform:rotate(-45deg)
+}
+.nav.active .menu .top{
+transform:rotate(45deg);
 
 }
+.nav.active .menu .top>span,.nav.active .menu .bottom>span{
+  -webkit-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
 .nav .menu div>span{
-  position: absolute;
-  z-index: 3;
-  top: 0;
-  left: 0;
-  width: 48px;
-  height: 48px;
+position: absolute;
+z-index: 3;
+top: 0;
+left: 0;
+width: 48px;
+height: 48px;
 
 }
-.nav .menu div>.top {
 
-}
 .nav .menu div>span>span{
-  display: block;
-  width: 17px;
-  height: 1px;
-  background: #fff;
-  position: absolute;
-  left: 16px;
-  z-index: 1;
+display: block;
+width: 17px;
+height: 1px;
+background: #fff;
+position: absolute;
+left: 16px;
+z-index: 1;
 
 }
 .nav .menu div>.top>span {
-  top: 23px;
-
-  -webkit-transform: translateY(-3px);
-  -ms-transform: translateY(-3px);
-  transform: translateY(-3px);
+top: 23px;
+-webkit-transform: translateY(-3px);
+-ms-transform: translateY(-3px);
+transform: translateY(-3px);
 }
-.nav .menu div>.bottom {
 
-}
 .nav .menu div>.bottom>span {
-  bottom: 23px;
-  -webkit-transform: translateY(3px);
-  -ms-transform: translateY(3px);
-  transform: translateY(3px);
+bottom: 23px;
+-webkit-transform: translateY(3px);
+-ms-transform: translateY(3px);
+transform: translateY(3px);
 }
 @media screen and (max-width:1044px){
-  .nav{
-    min-width: 320px;
-  }
+.nav{
+min-width: 320px;
+}
 }
 @media screen and (max-width:767px){
-  .nav .header{
-    background: #000;
+  .nav .item a:hover{
+    opacity: .65;
+    cursor:pointer;
   }
-  .nav.active{
-    max-height: none;
-    height:100%;
-    overflow: hidden;
-    background: transparent;
+.nav .header{
+background: #000;
+}
+.nav.active{
+max-height: none;
+height:100%;
+overflow: hidden;
+background: transparent;
 
-  }
-  .nav .content{
-    padding:0;
-    height:100%;
-  }
-  .nav .lists{
-    display: none;
-    background: #000;
-  }
-  .nav.active .lists{
-    z-index: 9999;
-    height:100%;
-  }
-  .nav .lists:before,.nav .lists:after{
-    content: "";
-    display: block;
-  }
-  .nav .lists:after{
-    clear:both;
-    overflow:hidden;
-    height:0px;
-    *zoom:1;
-  }
-  .nav .lists>.apple,.nav .lists>.bag{
-    display: none;
-  }
-  .nav .lists{
-    position: relative;
-    top:48px;
-    padding:0 48px;
-    bottom:0;
-    left:0;
-    right:0;
-    margin:0;
-    box-sizing: border-box;
-    height: auto;
-    z-index: 999;
-    display: none;
+}
+.nav .content{
+padding:0;
+height:100%;
+}
+.nav .lists{
+display: none;
+background: #000;
+}
+.nav.active .lists{
+/*z-index: 9999;*/
+height:100%;
+}
+.nav .lists:before,.nav .lists:after{
+content: "";
+display: block;
+}
+.nav .lists:after{
+clear:both;
+overflow:hidden;
+height:0px;
+*zoom:1;
+}
+.nav .lists>.apple,.nav .lists>.bag{
+display: none;
+}
+.nav .lists{
+/*position: relative;*/
+top:48px;
+padding:0 48px;
+bottom:0;
+left:0;
+right:0;
+margin:0;
+box-sizing: border-box;
+height: auto;
+/*z-index: 999;*/
+display: none;
 
-  }
-  .nav .lists li{
-    width: 100%;
-    height: 47px;
-    border-bottom: 1px solid #333;
-    pointer-events: none;
-  }
-  .nav .apple a{
-    background-size: 21px 48px;
-  }
-  .nav .bag{
-    right: 0;
-    position: absolute;
-    top: 0;
-    width: auto;
-    z-index: 1;
-  }
-  .nav .bag a{
-    background-size: 19px 48px;
-  }
+}
+.nav .lists li{
+width: 100%;
+height: 47px;
+border-bottom: 1px solid #333;
+}
+.nav .apple a{
+background-size: 21px 48px;
+}
+.nav .bag{
+right: 0;
+position: absolute;
+top: 0;
+width: auto;
+z-index: 1;
+}
+.nav .bag a{
+background-size: 19px 48px;
+}
 
-  .nav .header {
-    display: block;
-  }
-  .nav .header .menu{
-    display: block;
-  }
+.nav .header {
+display: block;
+}
+.nav .header .menu{
+display: block;
+}
 
 
 }
@@ -406,7 +425,7 @@
   }
 }
 
-@media screen and (max-width:735px){
+@media screen and (max-width:767px){
   .main .row>div:nth-child(1) a{
     background-image:url("../images/nike_watch_small.jpg");
     background-size: 736px 200px;
@@ -473,7 +492,7 @@
   background-size: auto 100%;
   background-position: top center;
   background-repeat: no-repeat;
-  background-image:url("../images/macbookpro_large.jpg")
+  background-image:url("../images/macbookpro_large.jpg");
 }
 .banner .images li:nth-child(1) a{
   background-color: #fff;
@@ -517,6 +536,7 @@
   float: left;
   position: relative;
   padding: 10px 0;
+
 }
 .banner .dot_nav li>div{
   -webkit-box-sizing: content-box;
@@ -534,11 +554,11 @@
   z-index: 1;
   height: 2px;
   width:0;
-  background: red;
+  background: grey;
 }
 .banner .dot_nav .active>div>p {
   width:100%;
-  background: red;
+  background: grey;
 }
 .banner .arrow{
   width:100%;
@@ -713,6 +733,8 @@
 @media screen and (max-width:767px){
   .footer dt i{
     display: block;
+    margin-right: 8px;
+    transition: transform .3s ease, -webkit-transform .3s ease;
   }
   .footer .content {
     padding: 0 16px;
@@ -760,7 +782,7 @@
     border-bottom: 1px solid #e3e3e3;
   }
   .footer .active{
-    border-bottom:0;
+    border-bottom:1px solid transparent;
   }
   .footer .active span{
     font-weight: 600;
@@ -784,5 +806,8 @@
   }
   .footer .footer-shop{
     border:0;
+  }
+  .footer .active i{
+    transform:rotateZ(45deg) scale(1.08);
   }
 }

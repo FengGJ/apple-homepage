@@ -1,13 +1,11 @@
 $(function() {
     // 导航
     var width = $(window).width();
-    var width1=$(window).width();
-
     var height = $(window).height();
     $(window).resize(function () {
         height = $(window).height();
-        width1=$(window).width();
-        if (width1 > 767) {
+        width=$(window).width();
+        if (width > 767) {
             $(".nav .lists").removeAttr("style");
             $(document.body).removeClass("html-body-overflow");
             $(".banner .images li").css("width", "100%");
@@ -26,7 +24,7 @@ $(function() {
         } else {
             $(".nav .lists").slideUp(500);
 
-            $("body").css({height: "100%", "overflow-y": "scroll"})
+            $("body").css({height: "100%"})
             $("html").css("overflow-y", "scroll")
             // $("body").css("height","100%")
         }
@@ -46,7 +44,6 @@ $(function() {
     var flag = false;
     // 轮播
     function move(type,s) {
-
         if (flag) {
             return;
         }
@@ -106,54 +103,45 @@ $(function() {
         if(w==1){
             w=0;
         }
-
-
-        /*  if(w>1){
-              console.log(w)
-              $(".banner .dot_nav li").eq(num).find("p").css("width", "100%");
-
-              w=0;
-              console.log(currentTime)
-
-          }else if(w<=1&&currentTime!=0){
-
-              w = currentTime / 3000;
-              $(".banner .dot_nav li").eq(num).find("p").css("width", w * 100 + "%");
-
-          }
-          if(w==0){
-              currentTime=0;
-
-          }*/
-
-        }
+    }
     var td=setInterval(move1,50);
 
     $(window).blur(function(){
+        w=0;
+        currentTime=0;
+        $(".banner .dot_nav li").eq(num).find("p").css("width",0);
         clearInterval(t);
         clearInterval(td);
         return false;
     });
     $(window).focus(function () {
-        t = setInterval(move, 3000);
-        td=setInterval(move1,50);
-        return false;
+        if(t!=10){
+            t = setInterval(move, 3000);
+            td=setInterval(move1,50);
+            return false;
+        }
+
     })
 
     $(".banner .pre>button").click(function () {
-        clearInterval(t)
+        clearInterval(t);
         clearInterval(td);
+        t=10;
         move("pre",1)
     })
     $(".banner .next>button").click(function () {
-        clearInterval(t)
+        clearInterval(t);
         clearInterval(td);
+        t=10;
+
         move("next",1)
     })
 
     $(".banner .dot_nav li").on("click",function () {
-        clearInterval(t)
+        clearInterval(t);
         clearInterval(td);
+        t=10;
+
         num=$(this).index();
         if(num>next){
             num=$(this).index()-1;
@@ -164,7 +152,6 @@ $(function() {
         }else if(num==next){
             $(".banner .dot_nav li p").removeAttr("style")
             $(".banner .dot_nav li ").removeClass("active").eq(num).addClass("active");
-            return;
         }
     })
 
@@ -173,15 +160,15 @@ $(function() {
 
 // 底部
     $(".footer .directory dl>dt").click(function(){
-        if (width1 > 767) {
+        if (width > 767) {
 
         }else{
-            $(this).toggleClass("active")
+            $(this).toggleClass("active");
             if($(this).attr("class")=="active"||$(this).attr("class")=="dt_padding active"){
                 $(this).next().slideDown(300);
-
             }else{
                 $(this).next().slideUp(300);
+
             }
         }
 
